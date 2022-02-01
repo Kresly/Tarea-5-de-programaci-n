@@ -1,0 +1,63 @@
+
+HOMOGEN() APPLICATION OUTPUT  (From R's contributed package 'climatol' 3.1.1)
+
+=========== Homogenization of Tmax, 2001-2003. (Mon Jan 31 20:13:51 2022)
+
+Parameters: varcli=Tmax anyi=2001 anyf=2003 suf=m nm=12 nref=10,10,4 std=3 swa=NA ndec=2 dz.max=5 dz.min=-5 wd=0,0,100 snht1=0 snht2=0 tol=0.02 maxdif=0.005 mxdif=0.005 maxite=999 force=FALSE wz=0.001 trf=0 mndat=NA gp=3 ini=NA na.strings=NA vmin=NA vmax=NA nclust=100 cutlev=NA grdcol=#666666 mapcol=#666666 hires=TRUE expl=TRUE metad=FALSE sufbrk=m tinc=NA tz=UTC cex=1.2 verb=TRUE
+
+Data matrix: 36 data x 3 stations
+Computing inter-station distances:  1  2
+
+
+========== STAGE 3 (Final computation of all missing data) ==========
+
+Computing inter-station weights... (done)
+
+Computation of missing data with outlier removal
+(Suggested data replacements are provisional)
+
+The following lines will have one of these formats:
+  Station(rank) Date: Observed -> Suggested (Anomaly, in std. devs.)
+  Iteration Max.data.difference (Station_code)
+2 -0.0219 (S01)
+3 -0.0021 (S01)
+
+Last series readjustment (please, be patient...)
+
+======== End of the missing data filling process, after 1.31 secs 
+
+----------- Final computations:
+
+ACmx: Station maximum absolute autocorrelations of anomalies
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.1900  0.2100  0.2300  0.2233  0.2400  0.2500 
+
+SNHT: Standard normal homogeneity test (on anomaly series)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   2.40    2.80    3.20    4.50    5.55    7.90 
+
+RMSE: Root mean squared error of the estimated data
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.691   1.721   1.752   1.778   1.821   1.891 
+
+POD: Percentage of original data
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   91.0    92.5    94.0    94.0    95.5    97.0 
+
+  ACmx SNHT RMSE POD Code Name     
+1 0.19 7.9  1.7  91  S01  La Vall  
+2 0.23 2.4  1.9  94  S02  Lucent   
+3 0.25 3.2  1.8  97  S03  Sunflower
+
+----------- Generated output files: -------------------------
+
+Tmax_2001-2003.txt :  This text output 
+Tmax_2001-2003_out.csv :  List of corrected outliers 
+Tmax_2001-2003_brk.csv :  List of corrected breaks 
+Tmax_2001-2003.pdf :  Diagnostic graphics 
+Tmax_2001-2003.rda :  Homogenization results. Postprocess with (examples):
+   dahstat('Tmax',2001,2003) #get averages in file Tmax_2001-2003-me.csv 
+   dahstat('Tmax',2001,2003,stat='tnd') #get OLS trends and their p-values 
+   dahgrid('Tmax',2001,2003,grid=YOURGRID) #get homogenized grids 
+   ... (See other options in the package documentation)
+
